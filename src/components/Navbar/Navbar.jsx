@@ -45,7 +45,7 @@ const Navbar = () => {
     >
       <div className="text-white py-5 flex justify-between items-center">
         {/* Logo */}
-        <div className="text-lg font-semibold cursor-pointer">
+        <div data-aos="fade-down" data-aos-duration="900" className="text-lg font-semibold cursor-pointer">
           <span className="text-[#8245ec]">&lt;</span>
           <span className="text-white">Tuhin</span>
           <span className="text-[#8245ec]">/</span>
@@ -55,23 +55,25 @@ const Navbar = () => {
 
         {/* Desktop Menu */}
         <ul className="hidden md:flex space-x-8 text-gray-300">
-          {menuItems.map((item) => (
-            <li
-              key={item.id}
-              className={`cursor-pointer hover:text-[#8245ec] ${
-                activeSection === item.id ? "text-[#8245ec]" : ""
-              }`}
-            >
-              <button onClick={() => handleMenuItemClick(item.id)}>
-                {item.label}
-              </button>
-            </li>
-          ))}
-        </ul>
+  {menuItems.map((item, index) => (
+    <li
+      data-aos="fade-down"
+      data-aos-duration={`${1500 + (index-1) * 500}`}
+      key={item.id}
+      className={`cursor-pointer hover:text-[#8245ec] ${
+        activeSection === item.id ? "text-[#8245ec]" : ""
+      }`}
+    >
+      <button onClick={() => handleMenuItemClick(item.id)}>
+        {item.label}
+      </button>
+    </li>
+  ))}
+</ul>
 
         {/* Social Icons */}
-        <div className="hidden md:flex space-x-4">
-          <a
+        <div data-aos="fade-down" data-aos-duration="2900" className="hidden md:flex space-x-4">
+          <a 
             href="https://github.com//DevCraftsmanship"
             target="_blank"
             rel="noopener noreferrer"
@@ -79,7 +81,7 @@ const Navbar = () => {
           >
             <FaGithub size={24} />
           </a>
-          <a
+          <a 
             href="https://www.instagram.com/_inpursuitofpeace_?igsh=d2VlODlzNnVxYnJs&utm_source=qr"
             target="_blank"
             rel="noopener noreferrer"
@@ -87,7 +89,7 @@ const Navbar = () => {
           >
             <FaInstagram size={24} />
           </a>
-          <a
+          <a 
             href="https://www.linkedin.com/in/tuhinmohanty"
             target="_blank"
             rel="noopener noreferrer"
@@ -131,7 +133,7 @@ const Navbar = () => {
             ))}
             <div className="flex space-x-4">
               <a
-                href="https://github.com/codingmastr"
+                href="https://github.com//DevCraftsmanship"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="text-gray-300 hover:text-white"
@@ -139,13 +141,22 @@ const Navbar = () => {
                 <FaGithub size={24} />
               </a>
               <a
-                href="https://www.linkedin.com/in/tarun-kaushik-553b441a4"
+                href="https://www.linkedin.com/in/tuhinmohanty"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="text-gray-300 hover:text-white"
               >
                 <FaLinkedin size={24} />
               </a>
+              <a
+                href="https://www.instagram.com/_inpursuitofpeace_?igsh=d2VlODlzNnVxYnJs&utm_source=qr"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-gray-300 hover:text-white"
+              >
+                <FaInstagram size={24} />
+              </a>
+
             </div>
           </ul>
         </div>
